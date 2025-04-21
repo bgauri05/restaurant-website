@@ -163,21 +163,88 @@
         max-width: 100%;
       }
     }
+    .form-wrapper {
+  background-color: #fcf3eb;
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 700px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form h3 {
+  font-size: 1.8rem;
+  font-family: 'Playfair Display', serif;
+  color: #8B0000;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.input-row input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-bottom: 2px solid #8B0000;
+  background: transparent;
+  font-size: 1rem;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-form textarea {
+  padding: 12px;
+  border: none;
+  border-bottom: 2px solid #8B0000;
+  background: transparent;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+}
+
+.contact-form button {
+  background-color: #a83232;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #7e1919;
+}
+
   </style>
 </head>
 <body>
-  <header class="main-header">
-    <nav class="navbar">
-      <ul class="nav-list">
+  <nav class="navbar">
+    <ul class="nav-list">
         <li><a href="homepagewpl.html">Home</a></li>
-        <li><a href="drag.html">Order</a></li>
-        <li><a href="membership.html">Member</a></li>
+        <li><a href="drag.html">Order</a></li> <!-- Link to Order Page -->
+        <li><a href="membership.html">Member</a></li> <!-- Link to Order Page -->
+        <li><a href="quiz.html">Quiz</a></li>
         <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    </ul>
+  </nav>
 
   <main>
+    
     <section class="contact-section">
       <h2>CONTACT US</h2>
       <div class="contact-card">
@@ -203,46 +270,47 @@
             </div>
           </div>
 
-          <div class="contact-form">
-            <h3>HAVE A QUESTION?<br/>GET IN TOUCH!</h3>
-            <form id="form">
-              <div class="input-row">
-                <input type="text" placeholder="Name" required>
-                <input type="text" placeholder="Last Name" required>
-              </div>
-              <div class="input-row">
-                <input type="email" placeholder="E-mail" required>
-                <input type="tel" placeholder="Phone">
-              </div>
-              <textarea placeholder="Message" rows="4" required></textarea>
-              <button type="submit">Get In Touch</button>
-            </form>
+          <div class="form-wrapper">
+            <div class="contact-form">
+              <h3>HAVE A QUESTION?<br/>GET IN TOUCH!</h3>
+              <form id="form" action="contact_submit.php" method="POST">
+                <div class="input-row">
+                  <input type="text" name="first_name" placeholder="First Name" required>
+                  <input type="text" name="last_name" placeholder="Last Name" required>
+                </div>
+                <div class="input-row">
+                  <input type="email" name="email" placeholder="E-mail" required>
+                  <input type="tel" name="phone" placeholder="Phone">
+                </div>
+                <textarea name="message" placeholder="Message" rows="4" required></textarea>
+                <button type="submit">Get In Touch</button>
+              </form>
+            </div>
           </div>
+          
+
+        <!-- Embedded Google Map inside contact card -->
+        <div style="margin-top: 40px; width: 100%; height: 400px;">
+          <iframe 
+            width="100%" 
+            height="100%" 
+            frameborder="0" 
+            style="border:0;" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.3417675443983!2d72.82738191485293!3d19.13343028705492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c942b395ce1d%3A0x5ad23c9d31b16a6f!2sJuhu%20Tara%20Rd%2C%20Mumbai%2C%20Maharashtra%20400049!5e0!3m2!1sen!2sin!4v1713536148043!5m2!1sen!2sin" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
       </div>
     </section>
   </main>
-
-  <!-- MAP SECTION -->
-  <div style="width: 100%; height: 400px; margin-top: 40px;">
-    <iframe 
-      width="100%" 
-      height="100%" 
-      frameborder="0" 
-      style="border:0;" 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.3417675443983!2d72.82738191485293!3d19.13343028705492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c942b395ce1d%3A0x5ad23c9d31b16a6f!2sJuhu%20Tara%20Rd%2C%20Mumbai%2C%20Maharashtra%20400049!5e0!3m2!1sen!2sin!4v1713536148043!5m2!1sen!2sin" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
 
   <!-- FOOTER -->
   <footer style="background-image: url('https://one8commune.co.in/wp-content/uploads/2024/03/Virat-kohli-bg.png'); background-size: cover; background-position: center; color: white; padding: 30px; font-family: Georgia, serif;">
     <p style="font-size: 18px; margin-bottom: 20px;">
       Enjoy welcoming atmosphere & moments of delight
     </p>
-
     <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;">
       <div>
         <h3 style="margin-bottom: 10px;">Address</h3>
@@ -265,9 +333,23 @@
   <script>
     document.getElementById('form').addEventListener('submit', function(e) {
       e.preventDefault();
-      alert("Thank you! Your message has been sent.");
+
+      const formData = new FormData(this);
+
+      fetch('contact_submit.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        alert(data);
+        this.reset();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Something went wrong. Please try again later.');
+      });
     });
   </script>
 </body>
 </html>
-
