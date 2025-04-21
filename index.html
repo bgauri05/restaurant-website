@@ -24,18 +24,7 @@
         }
         
         
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: brown;
-            text-decoration: none;
-        }
+       
        
         
         .branches, .chefs-best, .reservation {
@@ -269,18 +258,56 @@ footer {
     </style>
 </head>
 <body>
+    
   
-    <header>
-        <nav>
-            <ul>
-                <li><a href="homepagewpl.html">Home</a></li>
-                
-                <li><a href="drag.html">Order</a></li> <!-- Link to Order Page -->
-                <li><a href="membership.html">Member</a></li> <!-- Link to Order Page -->
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+    <header class="main-header">
+        <nav class="navbar">
+          <ul class="nav-list">
+            <li><a href="homepagewpl.html">Home</a></li>
+            <li><a href="drag.html">Order</a></li>
+            <li><a href="membership.html">Member</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </nav>
-    </header>
+      </header>
+      
+      <style>
+        .main-header {
+          background-color: #FAF1E6;
+          padding: 15px 0;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+      
+        .navbar {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      
+        .nav-list {
+          list-style: none;
+          display: flex;
+          gap: 50px;
+          padding: 0;
+          margin: 0;
+        }
+      
+        .nav-list li a {
+          text-decoration: none;
+          color: #8B0000;
+          font-size: 18px;
+          font-weight: bold;
+          font-family: 'Times New Roman', serif;
+          transition: color 0.3s ease;
+        }
+      
+        .nav-list li a:hover {
+          color: #6a1b1b;
+          text-decoration: underline;
+        }
+      </style>
+      
    
     
     <section class="hero">
