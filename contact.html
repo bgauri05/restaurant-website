@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #F8F5EE;
+      color:  #3E2723;
+    }
+
+    header {
+      padding: 20px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 50px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-list li a {
+      text-decoration: none;
+      color: #8B0000;
+      font-size: 18px;
+      font-weight: bold;
+      font-family: 'Times New Roman', serif;
+      transition: color 0.3s ease;
+    }
+
+    .nav-list li a:hover {
+      color: #6a1b1b;
+      text-decoration: underline;
+    }
+
+    .contact-section {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .contact-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      color: #8B0000;
+      font-family: 'Georgia', serif;
+    }
+
+    .contact-card {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .contact-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .info-box {
+      text-align: center;
+    }
+
+    .icon {
+      font-size: 2rem;
+      color: #a68340;
+    }
+
+    .contact-form {
+      flex: 1;
+      max-width: 400px;
+      text-align: left;
+    }
+
+    .contact-form h3 {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      background: transparent;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      background-color: #a68340;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #8a6b2d;
+    }
+
+    footer {
+      background-color: #a68340;
+      color: white;
+      padding: 40px 20px 20px;
+    }
+
+    footer a {
+      color: #f8f4e3;
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-form {
+        max-width: 100%;
+      }
+    }
+    .form-wrapper {
+  background-color: #fcf3eb;
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 700px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form h3 {
+  font-size: 1.8rem;
+  font-family: 'Playfair Display', serif;
+  color: #8B0000;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.input-row input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-bottom: 2px solid #8B0000;
+  background: transparent;
+  font-size: 1rem;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-form textarea {
+  padding: 12px;
+  border: none;
+  border-bottom: 2px solid #8B0000;
+  background: transparent;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+}
+
+.contact-form button {
+  background-color: #a83232;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #7e1919;
+}
+
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <ul class="nav-list">
+        <li><a href="homepagewpl.html">Home</a></li>
+        <li><a href="drag.html">Order</a></li> <!-- Link to Order Page -->
+        <li><a href="membership.html">Member</a></li> <!-- Link to Order Page -->
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    
+    <section class="contact-section">
+      <h2>CONTACT US</h2>
+      <div class="contact-card">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="info-box">
+              <div class="icon">🕒</div>
+              <h4>OPEN HOURS</h4>
+              <p>Mon–Fri: 9 AM - 7 PM<br/>Saturday: 9 AM - 5 PM<br/>Sunday: Closed</p>
+            </div>
+            <div class="info-box">
+              <div class="icon">📍</div>
+              <h4>ADDRESS</h4>
+              <p>Ground floor, Gauri Kunj,<br/>
+                Kalakar Kishorkumar Ganguli Marg,<br/>
+                Juhu Tara Road, Mumbai City,<br/>
+                Maharashtra, 400049</p>
+            </div>
+            <div class="info-box">
+              <div class="icon">📞</div>
+              <h4>SUPPORT</h4>
+              <p>+123 456 7890</p>
+            </div>
+          </div>
+
+          <div class="form-wrapper">
+            <div class="contact-form">
+              <h3>HAVE A QUESTION?<br/>GET IN TOUCH!</h3>
+              <form id="form" action="contact_submit.php" method="POST">
+                <div class="input-row">
+                  <input type="text" name="first_name" placeholder="First Name" required>
+                  <input type="text" name="last_name" placeholder="Last Name" required>
+                </div>
+                <div class="input-row">
+                  <input type="email" name="email" placeholder="E-mail" required>
+                  <input type="tel" name="phone" placeholder="Phone">
+                </div>
+                <textarea name="message" placeholder="Message" rows="4" required></textarea>
+                <button type="submit">Get In Touch</button>
+              </form>
+            </div>
+          </div>
+          
+
+        <!-- Embedded Google Map inside contact card -->
+        <div style="margin-top: 40px; width: 100%; height: 400px;">
+          <iframe 
+            width="100%" 
+            height="100%" 
+            frameborder="0" 
+            style="border:0;" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.3417675443983!2d72.82738191485293!3d19.13343028705492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c942b395ce1d%3A0x5ad23c9d31b16a6f!2sJuhu%20Tara%20Rd%2C%20Mumbai%2C%20Maharashtra%20400049!5e0!3m2!1sen!2sin!4v1713536148043!5m2!1sen!2sin" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background-image: url('https://one8commune.co.in/wp-content/uploads/2024/03/Virat-kohli-bg.png'); background-size: cover; background-position: center; color: white; padding: 30px; font-family: Georgia, serif;">
+    <p style="font-size: 18px; margin-bottom: 20px;">
+      Enjoy welcoming atmosphere & moments of delight
+    </p>
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;">
+      <div>
+        <h3 style="margin-bottom: 10px;">Address</h3>
+        <p>INKA CAFE & RESTAURANTS PRIVATE LIMITED</p>
+        <p>GST: 27AAECF8881H1Z6</p>
+        <p>Ground floor, Gauri Kunj,<br>
+           Kalakar Kishorkumar Ganguli Marg,<br>
+           Juhu Tara Road, Mumbai City,<br>
+           Maharashtra, 400049</p>
+      </div>
+
+      <div>
+        <h3 style="margin-bottom: 10px;">Contact</h3>
+        <p>Email: <a href="mailto:contact@inka.co.in">contact@inka.co.in</a></p>
+        <p>WhatsApp: <a href="https://wa.me/918108451818">+91 81084 51818</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+
+      fetch('contact_submit.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        alert(data);
+        this.reset();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Something went wrong. Please try again later.');
+      });
+    });
+  </script>
+</body>
+</html>

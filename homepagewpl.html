@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"></html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inka Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        .hero-content {
+  position: relative;
+  z-index: 2; /* Makes sure text is above the shading */
+}
+
+
+
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FAF1E6; /* Added background color */
+            color: #333;
+        }
+        
+        
+       
+       
+        
+        .branches, .chefs-best, .reservation {
+            text-align: center;
+            padding: 40px;
+        }
+        .menu-items {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .menu-items .dish img {
+            width: 200px;
+            border-radius: 10px;
+        }
+       
+        
+        footer {
+            background-color: #8b5e3b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .hero {
+  height: 100vh; /* or whatever height you need */
+  background: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+    url('https://one8commune.co.in/wp-content/uploads/2024/03/LAH-3.webp') no-repeat center/cover;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+    
+    </style>
+    <style>
+      /* Global fade-in on body */
+body {
+    animation: fadeInBody 1.2s ease-in;
+}
+
+@keyframes fadeInBody {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Hero content fade-in */
+.hero-content {
+    animation: fadeUp 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dish cards animation */
+.dish {
+    opacity: 0;
+    transform: scale(0.95);
+    animation: scaleFade 1s ease-in-out forwards;
+}
+
+.dish:nth-child(1) { animation-delay: 0.2s; }
+.dish:nth-child(2) { animation-delay: 0.4s; }
+.dish:nth-child(3) { animation-delay: 0.6s; }
+.dish:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes scaleFade {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Gallery slide-in */
+.branch-images img {
+    opacity: 0;
+    transform: translateX(50px);
+    animation: slideIn 1s ease forwards;
+}
+
+.branch-images img:nth-child(1) { animation-delay: 0.2s; }
+.branch-images img:nth-child(2) { animation-delay: 0.4s; }
+.branch-images img:nth-child(3) { animation-delay: 0.6s; }
+.branch-images img:nth-child(4) { animation-delay: 0.8s; }
+.branch-images img:nth-child(5) { animation-delay: 1s; }
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Booking form fade-in */
+.booking-form .form-group {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: formFade 1s ease forwards;
+}
+
+.booking-form .form-group:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.booking-form .form-group:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+@keyframes formFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button pulse on hover */
+.btn:hover {
+    animation: pulse 0.5s;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Footer fade in from bottom */
+footer {
+    animation: fadeFromBottom 1.5s ease-out;
+}
+
+@keyframes fadeFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+  /* -------------------
+   CHEF'S BEST SECTION
+------------------- */
+
+/* Animate each dish on scroll or load */
+.menu-items .dish {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: dishFadeIn 1s ease forwards;
+}
+
+.menu-items .dish:nth-child(1) { animation-delay: 0.2s; }
+.menu-items .dish:nth-child(2) { animation-delay: 0.4s; }
+.menu-items .dish:nth-child(3) { animation-delay: 0.6s; }
+.menu-items .dish:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes dishFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Zoom-in effect on image hover */
+.menu-items .dish img {
+    transition: transform 0.4s ease;
+}
+
+.menu-items .dish:hover img {
+    transform: scale(1.08);
+}
+
+/* Glow on hover */
+.menu-items .dish:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* -------------------
+   GALLERY SECTION
+------------------- */
+
+.branch-images img {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+    animation: galleryZoomIn 0.9s ease-out forwards;
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.branch-images img:nth-child(1) { animation-delay: 0.2s; }
+.branch-images img:nth-child(2) { animation-delay: 0.4s; }
+.branch-images img:nth-child(3) { animation-delay: 0.6s; }
+.branch-images img:nth-child(4) { animation-delay: 0.8s; }
+.branch-images img:nth-child(5) { animation-delay: 1s; }
+
+@keyframes galleryZoomIn {
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* On hover: pop and glow effect */
+.branch-images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+    </style>
+</head>
+<body>
+    
+  
+    <header class="main-header">
+        <nav class="navbar">
+          <ul class="nav-list">
+            <li><a href="homepagewpl.html">Home</a></li>
+            <li><a href="drag.html">Order</a></li>
+            <li><a href="membership.html">Member</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+      <style>
+        .main-header {
+          background-color: #FAF1E6;
+          padding: 15px 0;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+      
+        .navbar {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      
+        .nav-list {
+          list-style: none;
+          display: flex;
+          gap: 50px;
+          padding: 0;
+          margin: 0;
+        }
+      
+        .nav-list li a {
+          text-decoration: none;
+          color: #8B0000;
+          font-size: 18px;
+          font-weight: bold;
+          font-family: 'Times New Roman', serif;
+          transition: color 0.3s ease;
+        }
+      
+        .nav-list li a:hover {
+          color: #6a1b1b;
+          text-decoration: underline;
+        }
+      </style>
+      
+   
+    
+    <section class="hero">
+        <img src="c:\Users\gauri\OneDrive\Pictures\Screenshots\Screenshot 2025-04-12 083516.png" alt="Restaurant Logo" class="logo">
+        
+        <div class="hero-content">
+          <a href="#table" class="btn">Book a table</a>
+        </div>
+      </section>
+      
+
+  <style>
+    .hero {
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width:100; /* adjust size as needed */
+  height:130px;
+  z-index: 10;
+}
+
+.hero-content {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #fff;
+  border: 1px solid #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+    .hero {
+  position: relative;
+}
+
+.hero-content {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #fff;
+  border: 1px solid #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+  </style>
+    
+    <section class="branches">
+        <h2>Our Gallery</h2>
+        
+        <div class="branches-container">
+            <div class="branch-text">
+                
+                
+            </div>
+            <div class="branch-images">
+                <img src="https://one8commune.co.in/wp-content/uploads/2025/02/One8-Pune.webp" alt="Branch 1">
+                <img src="https://one8commune.co.in/wp-content/uploads/2024/03/DSC07198-1024x1536.webp" alt="Branch 2">
+                <img src="https://b.zmtcdn.com/data/pictures/2/20411632/6a4009f15bc30bda94875fa6edd26509.jpg" alt="Branch 2">
+                <img src="https://assets.vogue.in/photos/633e8646f8bb93a691e32f65/master/w_1600%2Cc_limit/LAH-09649.jpg" alt="Branch 2">
+                <img src="https://assets.vogue.in/photos/633e864496a8eee821d2f536/master/w_1600%2Cc_limit/LAH-00041%2520(1).jpg" alt="Branch 2">          
+            
+            </div>
+        </div>
+    </section>
+    
+    <style>
+
+
+        .branches {
+            text-align: left;
+            padding: 40px;
+            background-color: #F8F5EE;
+        }
+        .branches {
+  background-image: url('https://one8commune.co.in/wp-content/uploads/2024/03/Virat-kohli-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 40px;
+  color: white; /* Optional: makes text readable over image */
+  backdrop-filter: brightness(0.9); /* Optional: tone down brightness */
+}
+
+        .branches-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .branch-text {
+            font-size: 10px;
+            font-weight: bold;
+            color: #254117;
+        }
+        .branch-images {
+            display: flex;
+            gap: 15px;
+        }
+        .branch-images img {
+            width: 80%;
+            max-width: 280px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0px;
+        }
+    </style>
+    
+    
+    <section class="chefs-best" id="menu">
+        <h2>Chef's Best</h2>
+        <div class="menu-items">
+          <div class="dish">
+            <img src="https://www.wallpaperflare.com/static/316/882/576/meat-plates-dishes-food-wallpaper.jpg" alt="Truffle Parmesan Arancini">
+            <p>Truffle Parmesan Arancini</p>
+            <div class="description">Creamy risotto balls blended with Parmesan and truffle oil, fried to golden perfection.</div>
+          </div>
+          <div class="dish">
+            <img src="https://www.howsweeteats.com/wp-content/uploads/2018/11/lobster-bisque-I-howsweeteats.com-5.jpg" alt="Lobster Bisque">
+            <p>Lobster Bisque</p>
+            <div class="description">A rich, velvety lobster soup finished with cream and a hint of sherry.</div>
+          </div>
+          <div class="dish">
+            <img src="https://www.daisybeet.com/wp-content/uploads/2022/07/Heirloom-Tomato-and-Burrata-Salad-5052.jpg" alt="Burrata & Heirloom Tomato Salad">
+            <p>Burrata & Heirloom Tomato Salad</p>
+            <div class="description">Fresh heirloom tomatoes, creamy burrata, and basil drizzled with olive oil.</div>
+          </div>
+          <div class="dish">
+            <img src="https://www.nicepng.com/png/detail/54-546030_food-top-view-png-jpg-black-and-white.png" alt="Seafood Tartare">
+            <p>Seafood Tartare</p>
+            <div class="description">Fresh tuna, salmon, and shrimp, diced and tossed in a zesty citrus dressing, served with crispy crackers.</div>
+          </div>
+        </div>
+      </section>
+      
+      <style>
+        .chefs-best {
+          text-align: center;
+          background-image: url('https://static.vecteezy.com/system/resources/previews/018/747/268/non_2x/aesthetic-red-abstract-background-with-copy-space-area-suitable-for-poster-and-banner-vector.jpg');
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+          padding: 50px;
+          background-color: #fdf6f1; /* fallback color */
+        }
+      
+        .chefs-best h2 {
+          font-size: 2.5rem;
+          margin-bottom: 30px;
+          font-family: 'serif';
+          color: #efe9e9;
+        }
+      
+        .menu-items {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+      
+        .dish {
+          width: 300px;
+          height: 420px;
+          padding: 15px;
+          border-radius: 10px;
+          background-color: white;
+          position: relative;
+          overflow: hidden;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      
+        .dish:hover {
+          transform: scale(1.03);
+        }
+      
+        .dish img {
+          width: 100%;
+          height: 230px;
+          object-fit: cover;
+          border-radius: 8px;
+        }
+      
+        .dish p {
+          font-size: 18px;
+          margin-top: 12px;
+          text-align: center;
+          color: #791d1d;
+          font-weight: bold;
+          z-index: 2;
+        }
+      
+        /* Description style */
+        .description {
+          position: absolute;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.75);
+          color: #fff;
+          padding: 12px;
+          font-size: 14px;
+          text-align: center;
+          width: 100%;
+          transform: translateY(100%);
+          transition: transform 0.3s ease;
+          z-index: 1;
+        }
+      
+        .dish:hover .description {
+          transform: translateY(0);
+        }
+      </style>
+      <style>
+
+
+    
+        .book-table {
+    background-color: #fdf6f1;
+    padding: 70px 30px; /* Increased padding for more space */
+    text-align: center;
+    font-family: "serif";
+}
+
+.book-table h2 {
+    font-size: 3rem; /* Increased font size */
+    font-weight: bold;
+    margin-bottom: 30px; /* Increased bottom margin for more space */
+}
+
+.booking-form {
+    max-width: 900px; /* Increased width for more space */
+    margin: auto;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* Increased gap for more space between input fields */
+    margin-bottom: 20px; /* Increased margin between form groups */
+}
+
+.form-group input, 
+.form-group select {
+    flex: 1;
+    padding: 12px; /* Increased padding inside input fields */
+    border: none;
+    border-bottom: 3px solid rgb(16, 1, 1); /* Thicker bottom border */
+    font-size: 1.1rem; /* Slightly larger font size */
+    background: transparent;
+    outline: none;
+}
+
+.btn {
+    padding: 14px 24px; /* Increased padding for more spacious buttons */
+    border: 1px solid rgb(18, 1, 1);
+    background: none;
+    color: black;
+    font-size: 1.1rem; /* Slightly larger font size */
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: black;
+    color: white;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+    </style>
+    <section class="book-table" id="table">
+      <h2>BOOK YOUR TABLE</h2>
+
+      <div id="error-message" style="color: red; margin-bottom: 10px;"></div>
+
+      <form class="booking-form" action="book_table.php" method="POST" onsubmit="return validateForm()">
+          <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" required>
+              <input type="tel" name="phone" placeholder="Your Phone" required pattern="\d{10}" title="Phone number must be 10 digits">
+              <select name="location" required>
+                  <option selected disabled>Location</option>
+                  <option>juhu</option>
+                  <option>Lower Parel</option>
+                  <option>Bandra</option>
+              </select>
+          </div>
+  
+          <div class="form-group">
+              <select name="people" required>
+                  <option selected disabled>People</option>
+                  <option>1 Person</option>
+                  <option>2 People</option>
+                  <option>3 People</option>
+                  <option>4+ People</option>
+              </select>
+              <input type="datetime-local" name="datetime" id="datetime" required>
+          </div>
+  
+          <button type="submit" class="btn">BOOK A TABLE</button>
+      </form>
+  
+      <script>
+        // Set the min date-time to now
+        const now = new Date();
+        const offset = now.getTimezoneOffset();
+        const localNow = new Date(now.getTime() - (offset * 60000));
+        document.getElementById('datetime').min = localNow.toISOString().slice(0, 16);
+    
+        function validateForm() {
+            const phone = document.querySelector('input[name="phone"]').value;
+            const errorDiv = document.getElementById('error-message');
+            const phoneRegex = /^\d{10}$/;
+    
+            if (!phoneRegex.test(phone)) {
+                errorDiv.textContent = "❌ Phone number must be exactly 10 digits.";
+                return false; // prevent submission
+            }
+    
+            errorDiv.textContent = ""; // clear error if valid
+            return true; // allow submission
+        }
+    </script>
+   
+      
+  </section>
+  
+    
+    
+    <div class="video-wrapper">
+        <video autoplay muted loop playsinline width="100%" height="auto">
+          <source src="5101164-uhd_3840_2160_25fps.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
+      
+    
+    
+      <footer style="background-image: url('https://one8commune.co.in/wp-content/uploads/2024/03/Virat-kohli-bg.png'); color: white; padding: 30px; font-family: Georgia, serif; position: relative;">
+        <p style="font-size: 18px; margin-bottom: 20px;">
+          Enjoy welcoming atmosphere & moments of delight
+        </p>
+      
+        <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;">
+          <div>
+            <h3 style="margin-bottom: 10px;">Address</h3>
+            <p>FOURLEAF CAFE & RESTAURANTS PRIVATE LIMITED</p>
+            <p>GST: 27AAECF8881H1Z6</p>
+            <p>Ground floor, Gauri Kunj,<br>
+              Kalakar Kishorkumar Ganguli Marg,<br>
+              Juhu Tara Road, Mumbai City,<br>
+              Maharashtra, 400049</p>
+          </div>
+      
+          <div>
+            <h3 style="margin-bottom: 10px;">Contact</h3>
+            <p>Email: <a href="mailto:contact@one8commune.co.in" style="color: #f8f4e3;">contact@one8commune.co.in</a></p>
+            <p>WhatsApp: <a href="https://wa.me/918108451818" style="color: #f8f4e3;">+91 81084 51818</a></p>
+          </div>
+        </div>
+      
+        <!-- Logo Image -->
+        <img src="c:\Users\gauri\OneDrive\Pictures\Screenshots\Screenshot 2025-04-12 083516.png" alt="Logo" style="position: absolute; bottom: 20px; right: 20px; width: 80px; height: auto;">
+      </footer>
+      
+
+<style>
+       .video-wrapper {
+  width: 100%;
+  height: 400px;
+  margin: 0 auto; /* 👈 this centers the wrapper itself */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.video-wrapper video {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style>
+
+
+    <script>
+        function scrollToMenu() {
+            document.getElementById("menu").scrollIntoView({ behavior: "smooth" });
+        }
+        function scrollToReservation() {
+            document.getElementById("reservation").scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+</body>
+</html>
